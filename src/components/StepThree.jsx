@@ -1,12 +1,8 @@
-import React,{ useState,useEffect } from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
+import React from "react";
+import { Field } from "formik";
+
 import TextField from '@material-ui/core/TextField';
 import JourneyDetails from "./JourneyDetails";
-import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/InputLabel';
-import Input from '@material-ui/core/Input';
-import InputAdornment from '@material-ui/core/InputAdornment';
 import { makeStyles } from "@material-ui/core/styles";
 import Button from '@material-ui/core/Button';
 
@@ -42,7 +38,6 @@ export default function StepThree (props){
   
     return (
         <>
-        <h1>Step 3</h1>
         <JourneyDetails setStep={setStep} values={values}/>
         <div className={classes.root}>
             <h4 className={classes.amount}>₹{values.bid}</h4>

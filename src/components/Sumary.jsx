@@ -1,11 +1,9 @@
-import React,{ useState,useEffect } from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
+import React,{ useState } from "react";
 import JourneyDetails from "./JourneyDetails";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from '@material-ui/core/Button';
 import BidDetails from "./BidDetails";
-import OtpInput, { ResendOTP } from 'otp-input-react';
+
 
 const useStyles = makeStyles(theme => ({
     field: {
