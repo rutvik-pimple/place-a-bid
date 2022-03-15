@@ -6,6 +6,7 @@ import Input from '@material-ui/core/Input';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import { makeStyles } from "@material-ui/core/styles";
 import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles(theme => ({
     field: {
@@ -31,31 +32,36 @@ export default function StepTwo (props){
   
     return (
         <>
-        <JourneyDetails setStep={setStep} values={values}/>
-
-        <FormControl style={{marginTop:"15px"}} fullWidth >
-          <InputLabel htmlFor="standard-adornment-amount">Bid Amount</InputLabel>
-          <Input
-            id="standard-adornment-amount"
-            name="bid"
-            value={amount}
-            onChange={(e)=>{setAmount(e.target.value); values.bid =e.target.value }}
-            startAdornment={<InputAdornment style={{fontSize:"35px"}} position="start">₹</InputAdornment>}
-            style={{fontSize:"35px",borderBottom:"none"}}
-            type="number"
-          />
-        </FormControl>
-        <Button
-            variant="contained"
-            color="primary"
-            // type="submit"
-            onClick={()=>setStep(3)}
-            className={classes.button}
-            fullWidth
-            disabled={!(values.bid>0)}
-        >
-            Next
-        </Button>
+        <Grid item xs={11} >
+          <JourneyDetails setStep={setStep} values={values}/>
+        </Grid>
+        <Grid item xs={11} >
+          <FormControl style={{marginTop:"15px"}} fullWidth >
+            <InputLabel htmlFor="standard-adornment-amount">Bid Amount</InputLabel>
+            <Input
+              id="standard-adornment-amount"
+              name="bid"
+              value={amount}
+              onChange={(e)=>{setAmount(e.target.value); values.bid =e.target.value }}
+              startAdornment={<InputAdornment style={{fontSize:"35px"}} position="start">₹</InputAdornment>}
+              style={{fontSize:"35px",borderBottom:"none"}}
+              type="number"
+            />
+          </FormControl>
+        </Grid>
+        <Grid item xs={11} >
+          <Button
+              variant="contained"
+              color="primary"
+              // type="submit"
+              onClick={()=>setStep(3)}
+              className={classes.button}
+              fullWidth
+              disabled={!(values.bid>0)}
+          >
+              Next
+          </Button>
+        </Grid>
       </>
     );
   };

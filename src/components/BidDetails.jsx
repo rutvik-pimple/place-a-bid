@@ -39,7 +39,7 @@ function BidDetails(props) {
             <p className={classes.details}>{values.full_name}</p>
         </div>
         <div>
-            <h3>₹567</h3>
+            <h3>₹{values.bid}</h3>
             <p>fixed price</p>
         </div>
     </div>

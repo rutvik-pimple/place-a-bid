@@ -32,7 +32,7 @@ export default function StepOne(props){
   
     return (
       <>
-      <Grid container spacing={1}>
+      
         <Grid item xs={6} >
             <Field
                 name="source_location"
@@ -100,7 +100,7 @@ export default function StepOne(props){
                 Enter Bid Details
             </Button>
         </Grid>
-        </Grid>
+        
 
       </>
     );

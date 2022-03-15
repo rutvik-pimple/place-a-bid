@@ -8,6 +8,7 @@ import StepThree from './components/StepThree'
 import { makeStyles } from "@material-ui/core/styles";
 import StepFour from './components/StepFour'
 import Summary from './components/Sumary'
+import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles(theme => ({
   form: {
@@ -104,8 +105,10 @@ function App() {
       >
         {({ values, errors, touched }) => (
           <Form className={classes.form}>
+            <Grid container spacing={1}>
             {renderStep(step, setStep, values, errors, touched, handleSubmit)}
             {/* <StepButton step={step} /> */}
+            </Grid>
           </Form>
         )}
       </Formik>

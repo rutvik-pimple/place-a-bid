@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Button from '@material-ui/core/Button';
 import BidDetails from "./BidDetails";
 import OtpInput, { ResendOTP } from 'otp-input-react';
+import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles(theme => ({
     field: {
@@ -67,13 +68,18 @@ export default function StepFour (props){
   
     return (
         <>
+        <Grid item xs={11} >
         <JourneyDetails setStep={setStep} values={values}/>
+        </Grid>
+        <Grid item xs={11} >
         <BidDetails values={values} />
+        </Grid>
         {wrongOtp ? (
             <p>You have entered wrong OTP.</p>
         ):(
             <p>We've sent OTP to your mobile number {values.mobile_number}, Please enter it below to submit your bid</p>
         )}
+        <Grid item xs={11} >
         <OtpInput
             className={classes.field}
             name="otp"
@@ -83,8 +89,10 @@ export default function StepFour (props){
             autoFocus OTPLength={4} otpType="number" 
             disabled={disabled} 
         />
-        <ResendOTP onResendClick={handleResend} renderButton={renderButton} renderTime={renderTime} />
         
+        <ResendOTP onResendClick={handleResend} renderButton={renderButton} renderTime={renderTime} />
+        </Grid>
+        <Grid item xs={11} >
         <Button
             variant="contained"
             color="primary"
@@ -96,6 +104,7 @@ export default function StepFour (props){
         >
             Verify
         </Button>
+        </Grid>
       </>
     );
   };
